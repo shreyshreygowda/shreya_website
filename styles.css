@@ -482,15 +482,21 @@ main {
   }
 }
 
-.heart {
+.sapphire {
   display: inline-block;
-  animation: heartbeat 2s ease-in-out infinite;
+  vertical-align: middle;
+  margin-left: 0.15rem;
+  animation: gem-sparkle 3s ease-in-out infinite;
 }
 
-@keyframes heartbeat {
-  0%, 100% { transform: scale(1); }
-  15% { transform: scale(1.2); }
-  30% { transform: scale(1); }
+.sapphire svg {
+  display: block;
+  filter: drop-shadow(0 1px 3px rgba(196, 191, 227, 0.55));
+}
+
+@keyframes gem-sparkle {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  50% { transform: scale(1.08) rotate(3deg); opacity: 0.92; }
 }
 
 /* ── Entrance animations ── */
@@ -512,6 +518,11 @@ main {
 }
 
 .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.js .reveal {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
